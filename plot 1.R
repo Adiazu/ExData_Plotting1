@@ -1,5 +1,4 @@
 ## Loading the libraries I will use
-library(sqldf)
 library(data.table)
 
 fileIURL <- "https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip"
@@ -21,3 +20,7 @@ household$DateTime <- as.POSIXct(household$DateTime)
 ##Creating the first plot
 
 hist(household$Global_active_power,col="red",main="Global Active Power", xlab = "Global Active Power (kilowatts)")
+
+##Saving the plot
+dev.copy(png,"plot1.png", width=480, height=480)
+dev.off()
